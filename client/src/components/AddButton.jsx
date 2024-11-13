@@ -3,7 +3,7 @@ import { Plus } from 'lucide-react';
 
 function AddButton() {
     return (
-        <div className='bg-[#2c2c2c] p-3 rounded-[50px]'>
+        <div className='bg-[#2c2c2c] p-3 rounded-[50px] fixed bottom-10 right-8 z-5'>
             <Plus color='white' />
         </div>
     );

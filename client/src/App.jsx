@@ -37,7 +37,7 @@ let dataset = [
 function App() {
     return (
         <div>
-            <Navbar />
+            <Navbar/>
             <div className='w-screen min-h-screen bg-[#f2f2f2] flex flex-col justify-between pt-[75px]'>
                 <div className='px-[105px] py-[75px] justify-center gap-[50px] flex flex-wrap md:justify-start'>
                     {dataset.map((entry, index) => {
@@ -45,9 +45,7 @@ function App() {
                         return <ClassCard key={index} courseName={courseName} courseData={courseData}/>;
                     })}
                 </div>
-                <div className='justify-end p-[25px] items-center flex'>
-                    <AddButton />
-                </div>
+                <AddButton/>
             </div>
         </div>
     );

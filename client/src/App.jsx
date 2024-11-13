@@ -33,15 +33,17 @@ let dataset = [
     }
 ]
 
-function App(props) {
+function App() {
     return (
         <div>
             <Navbar />
-            <div className='px-[105px] bg-[#f2f2f2] w-screen h-screen justify-start items-start gap-[50px] inline-flex'>
-                {dataset.map((entry, index) => {
-                    const [courseName, courseData] = Object.entries(entry)[0];
-                    return <ClassCard key={index} courseName={courseName} courseData={courseData}/>;
-                })}
+            <div className='w-screen h-screen bg-[#f2f2f2]'>
+                <div className='px-[105px] py-[75px] justify-center gap-[50px] flex flex-wrap lg:justify-start'>
+                    {dataset.map((entry, index) => {
+                        const [courseName, courseData] = Object.entries(entry)[0];
+                        return <ClassCard key={index} courseName={courseName} courseData={courseData}/>;
+                    })}
+                </div>
             </div>
         </div>
     );

@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from "./components/Navbar.jsx";
 import ClassCard from "./components/classcard/ClassCard.jsx";
+import AddButton from "./components/AddButton.jsx";
 
 let dataset = [
     {
@@ -37,12 +38,15 @@ function App() {
     return (
         <div>
             <Navbar />
-            <div className='w-screen h-screen bg-[#f2f2f2]'>
+            <div className='w-screen min-h-screen bg-[#f2f2f2] flex flex-col justify-between'>
                 <div className='px-[105px] py-[75px] justify-center gap-[50px] flex flex-wrap lg:justify-start'>
                     {dataset.map((entry, index) => {
                         const [courseName, courseData] = Object.entries(entry)[0];
                         return <ClassCard key={index} courseName={courseName} courseData={courseData}/>;
                     })}
+                </div>
+                <div className='justify-end p-[25px] items-center flex'>
+                    <AddButton />
                 </div>
             </div>
         </div>

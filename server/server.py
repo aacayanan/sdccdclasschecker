@@ -43,7 +43,7 @@ def get_class_info(course_list):
         watchlist.append(list_item)
     return watchlist
 
-@app.route("/")
+@app.route("/api/data")
 def retrieve_classes():
     return get_class_info(courses)
 

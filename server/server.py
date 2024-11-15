@@ -5,7 +5,7 @@ import requests
 app = Flask(__name__)
 cors = CORS(app, origins='*')
 
-courses = [81851, 82243, 81294, 81299, 81300, 83876]
+courses = [81851, 82243, 81294, 83876, 81299, 81300]
 
 def get_data():
     url = 'https://mws-api.sdccd.edu/?term=2253career=ugrd&_=1730965648722'

@@ -5,7 +5,7 @@ import requests
 app = Flask(__name__)
 cors = CORS(app, origins='*')
 
-courses = [81851, 82243, 81294, 81299]
+courses = [81851, 82243, 81294, 81299, 81300, 83876]
 
 def get_data():
     url = 'https://mws-api.sdccd.edu/?term=2253career=ugrd&_=1730965648722'
@@ -38,8 +38,10 @@ def get_class_info(course_list):
         list_item = {
             data['data']['query']['rows'][row]['COURSENAME']: {
                 'DAYS': data['data']['query']['rows'][row]['DAYS'],
-                'OPEN_SEATS': data['data']['query']['rows'][row]['TRUEOPEN'],
-                'WAITLIST': data['data']['query']['rows'][row]['WAIT_TOT']
+                'OPEN SEATS': data['data']['query']['rows'][row]['TRUEOPEN'],
+                'WAITLIST': data['data']['query']['rows'][row]['WAIT_TOT'],
+                'WAITLIST CAP': data['data']['query']['rows'][row]['WAIT_CAP'],
+                'PROFESSOR': data['data']['query']['rows'][row]['NAME']
             }
         }
         watchlist.append(list_item)

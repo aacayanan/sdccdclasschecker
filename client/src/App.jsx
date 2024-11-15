@@ -20,7 +20,7 @@ function App() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:5000/api/data')
+        fetch('https://aaroncayanan.com/classcheck/api/')
             .then(response => response.json())
             .then(data => {
                 setDataset(data);    // Store the data in the state

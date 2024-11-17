@@ -5,15 +5,15 @@ import requests
 app = Flask(__name__)
 cors = CORS(app, origins='*')
 
-courses = [81851, 82243, 81294, 83876, 81299, 81300]
+courses = [81851, 82243, 81294, 83876, 81299, 81300] # List of course numbers to watch
 
 def get_data():
     url = 'https://mws-api.sdccd.edu/?term=2253career=ugrd&_=1730965648722'
     data = None
     try:
-        response = requests.get(url, verify=False)
+        response = requests.get(url, verify=False) # Fetch data from the API
         if response.status_code == 200:
-            data = response.json()
+            data = response.json() # Parse JSON response
             return data
         else:
             print(f"Error: {response.status_code}")
@@ -26,7 +26,7 @@ def get_row_number(data, class_num):
     rows = data['data']['query']['rows']
     for entry in rows:
         if entry.get('CLASS_NBR') == class_num:
-            return entry.get('attr:rownumber')
+            return entry.get('attr:rownumber') # Return row number for the class
     return None
 
 
@@ -44,12 +44,12 @@ def get_class_info(course_list):
                 'PROFESSOR': data['data']['query']['rows'][row]['NAME']
             }
         }
-        watchlist.append(list_item)
+        watchlist.append(list_item) # Add class info to watchlist
     return watchlist
 
 @app.route("/api/data")
 def retrieve_classes():
-    return get_class_info(courses)
+    return get_class_info(courses) # Return class info for the courses
 
 
 if __name__ == "__main__":

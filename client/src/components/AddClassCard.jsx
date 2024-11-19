@@ -1,9 +1,13 @@
 import React from 'react';
+import { X } from 'lucide-react';
 
 function AddClassCard(props) {
     return (
         <div className='bg-black bg-opacity-50 w-screen h-screen flex relative justify-center items-center'>
-            <div className='bg-white flex flex-col z-5 h-min p-5 gap-5'>
+            <div className='bg-white flex flex-col z-5 h-min p-10 gap-5 relative'>
+                <div className='absolute top-2 right-2 border border-black border-2 rounded-sm'>
+                    <X role='button'/>
+                </div>
                 <div className='text-xl font-bold tracking-wide'>
                     Add / Remove Class
                 </div>
